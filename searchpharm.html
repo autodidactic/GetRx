@@ -1,0 +1,29 @@
+<html >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+  <title></title>
+
+  <!-- Links (anchor tags) inside Google Maps InfoBox only work with version "1.0.0-beta.1". From version "1.0.0-beta.2" they don't work, nothing happens when clicking. -->
+  <script data-require="angular.js@1.3.0-beta.5" data-semver="1.3.0-beta.5" src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+
+  <script src="app.js"></script>
+</head>
+
+<body ng-app="project" >
+  
+  <h3>locate nearest pharmacy</h3>
+  <input type="text" ng-model="search" class="search-query" style="width: 180px" placeholder="enter city or zip" />
+  <button class="btn btn-primary">Locate</button>
+  <div class="map-container"   ng-controller="MapCtrl">
+    <div id="map-canvas"></div>
+  </div>
+
+</body>
+
+</html>
