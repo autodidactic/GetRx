@@ -1,0 +1,19 @@
+<div class="bar">
+    <ul ng-show="layout == 'grid'" class="grid">
+    <li ng-repeat="p in pics">
+      <a href="{{p.link}}" target="_blank"><img ng-src="{{p.name}}" width="10" height="10" ></a>
+       <span class="plus icon-thin_plus"></span>{{p.text}}
+    </li>
+  </ul>
+  <ul   class="list">
+
+    <li ng-repeat="p in pics" >
+      <a href="{{p.link}}" target="_blank">
+        <img ng-src="{{p.name}}" width="10" height="10" >{{p.text}}
+        <span class="plus icon-thin_plus"></span>
+         
+      </a>
+    </li>
+  
+  </ul>
+</div>
