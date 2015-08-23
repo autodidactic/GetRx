@@ -1,0 +1,44 @@
+
+<div align="center" ng-show="cart.length"  >
+ 
+
+ <div ng-repeat="c in cart">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-default">
+          Medication:<div class="panel-heading">{{ c.medicine }}</div>
+          <div class="panel-body">
+            Qty:{{ c.qty.value }}<br/>
+           Dosage:{{ c.dosage.displayName }}
+          </div>
+           <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="removeMeds($index)">
+                  <span class="glyphicon glyphicon-remove"></span>
+                </button>
+              </span>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div  align="center" ng-controller="appCtrl">
+ 
+    <div class="well" style="margin-top: 30px; width: 220px; overflow: hidden;" >
+      <div class="input-append">   <button ng-click="add(namesel,selectqty,selectdosage)"   class="btn btn-primary">Add</button>
+        <input type="text" ng-model="search" class="search-query" style="width: 180px" placeholder="search medicines"/>
+         Qty: <select ng-model="selectqty" ng-options="q as q.value for q in qty"></select>
+         <br/>     
+         Dosage/day: <select ng-model="selectdosage" ng-options="d as d.value for d in dosage"></select>
+          <br/>
+        <button type="submit" class="btn">Search</button>
+      
+      </div>
+      <ul class="nav nav-pills nav-stacked">
+        <li ng-animate="'animate'" ng-repeat="name in names | filter: search">
+        <a href="" ng-click="found(name)"> {{name}} </a>
+
+        </li>
+      </ul>More info about:<a href="http://google.com#q={{namesel}}" target="_blank">{{namesel}}</a>
+ 
+    </div>
+ 
+</div>
