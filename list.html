@@ -1,0 +1,20 @@
+<div align="center" ng-app="project" ng-init="names=['tylenol', 'advil', 'peptobismol','cold med', 'vicks', 'children tylenol','flu medicine'];">
+
+  <h2>Welcome</h2>
+  {{message}}
+
+  <h2>Most widely used over the counter medications</h2>
+
+  <table>
+    <tr ng-repeat="med in names">
+      <td>
+
+        {{med}}
+
+      </td>
+    </tr>
+  </table>
+
+</div>
+
+
